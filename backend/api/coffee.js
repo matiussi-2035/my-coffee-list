@@ -3,7 +3,7 @@ const coffee = require("../models/Coffee")
 module.exports = app => {
 
 	//Inserting a new coffee
-	app.post('/coffee', (req, res) =>{
+	app.post('/add-coffee', (req, res) =>{
 
 		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
 
@@ -18,8 +18,8 @@ module.exports = app => {
 		})
 	})
 
-	//Getting all user coffees
-	app.get('/my-list', (req, res) =>{
+	//Getting all coffees
+	app.get('/coffees', (req, res) =>{
 		coffee.findAll()
 			.then((coffes) =>{
 				res.send(coffes)
@@ -27,9 +27,24 @@ module.exports = app => {
 				res.send("It wasn't possible to load your coffee list. " + error)
 			})
 	})
+	//Get a single coffee
+	app.get('/coffee/:id', (req, res) =>{
+		const { id } = req.params
+
+		coffee.findOne(
+			{
+				id:id
+			}
+		)
+		.then((coffee) =>{
+			res.send(coffee)
+		}).catch(error =>{
+			res.send("An error occured while trying to get the coffee. " + error)
+		})
+	})
 
 	//Editing a coffee
-	app.put('/coffee/:id', (req, res) =>{
+	app.put('/edit-coffee/:id', (req, res) =>{
 		const { id } = req.params
 		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
 		
@@ -49,7 +64,7 @@ module.exports = app => {
 	})
 
 	//Deleting a coffee
-	app.delete('/coffee/:id', (req, res) =>{
+	app.delete('/delete-coffee/:id', (req, res) =>{
 		const { id } = req.params
 		coffee.destroy({
 			where: {

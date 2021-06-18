@@ -1,0 +1,36 @@
+@import '../utils/colors';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+header{
+   background-color: $primary-color;
+   color: white;
+   @include flexContent(center, space-around, row);
+   height: 4em;
+}
+.navigation{
+}
+.menu{
+   display: none;
+   position: absolute;
+   background-color: $primary-color;
+   width: 80%;
+   left: 0;
+}
+#button-menu{
+   display: none;
+   height: 2em;
+}
+#button-menu:checked ~ .menu{
+   display: block;
+}
+
+.menu-icon{
+   cursor: pointer;
+   display: inline-block;
+   padding: 1em .5em;
+  position: relative;
+}
+.menu{
+
+}

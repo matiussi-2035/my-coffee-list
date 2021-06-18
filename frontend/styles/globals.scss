@@ -1,0 +1,25 @@
+@import './utils/fonts';
+@import './utils/reset';
+@import './utils/colors';
+@import './components/Header.scss';
+@import './components//Logo.scss';
+
+html,
+body {
+  font-family: 'Nunito',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: grid;
+  grid-template-rows: 20% 1fr 15%;
+  font-size: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
