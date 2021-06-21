@@ -2,13 +2,20 @@
    font-size: clamp(15px, 5vw, 30em);
 	font-weight: 500;
 }
-
+.coffee-info{
+   h2{
+      font-size: clamp(1.5em, 2.5vw, 30em);
+   }
+}
 .info{
    color: $info-color;
+   font-size: clamp(1em, 1.5vw, 30em);
 }
 .info-highlight{
    color: $primary-color;
 }
 .flavor{
+   font-size: clamp(1em, 1.5vw, 30em);
+   font-weight: 700;
 	color: #fff;
 }

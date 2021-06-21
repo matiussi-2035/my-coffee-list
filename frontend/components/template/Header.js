@@ -9,7 +9,7 @@ const Header = () => {
 		<header>
 			<nav className="navigation">
             <input type="checkbox" id="button-menu" className="button-menu"/>
-            <label className="menu-icon" for="button-menu">
+            <label className="menu-icon" htmlFor="button-menu">
             <span></span>   
             <span></span>   
             <span></span>

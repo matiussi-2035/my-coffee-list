@@ -14,17 +14,26 @@
    flex-wrap: wrap;
 }
 .coffee-picture{
-   height: 4em;
-   width: 4em;
       img{
-         width: 100%;
-         border-radius: 4em;
+         width: max(3.5em, 7vw);
+         border-radius: 10vw;
       }
 }
-
+.coffee-info{
+   margin-left: 1em;
+   width: auto;
+   .info-wrapper{
+      width: 100%;
+      .info:nth-child(2){
+         margin-left: 1em;
+      }
+   }
+}
 .divider{
    height: 1px;
    background-color: $info-color;
+   margin-top: 1em;
+   margin-bottom: 1em;
 }
 .card-bottom{
    @include flexContent(center, flex-start, row);
@@ -32,6 +41,39 @@
    .flavor{
 		background-color: $primary-color;
 		padding: .5em;
-		border-radius: .5em;
+		border-radius: .2em;
+      margin: .5em .7em .5em 0;
+
+   }
+   .acidity{
+      background-color: $acidity-color;
+   }
+   .bitterness{
+      background-color: $bitterness-color;
+   }
+   .chocolate{
+      background-color: $chocolate-color;
+   }
+   .fruity{
+      background-color: $red;
+   }
+   .floral{
+      background-color: $floral-color;
+   }
+   .herbal{
+      background-color: $herbal-color;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   .card-content{
+      padding: 2vw;
+   }
+   .coffee-info{
+      margin-left: 2vw;
+   }
+   .divider{
+      margin-top: 2vw;
+      margin-bottom: 2vw;
    }
 }
