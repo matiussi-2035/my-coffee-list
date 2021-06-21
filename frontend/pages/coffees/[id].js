@@ -1,4 +1,5 @@
 import axios from "axios"
+import Head from "../../components/template/Head"
 
 export const getStaticPaths = async () => {
 	const response = await axios.get(
@@ -27,9 +28,13 @@ export const getStaticProps = async (context) =>{
 }
 const Details = ({coffee}) => {
     return ( 
+      <>
+         <Head pageTitle="My Coffee List | Edit"></Head>
+
         <div>
             <h1>{coffee.name}</h1>
         </div>
+      </>
      );
 }
  

@@ -1,0 +1,14 @@
+.menu-item{
+   font-size: clamp(15px, 5vw, 30em);
+	font-weight: 500;
+}
+
+.info{
+   color: $info-color;
+}
+.info-highlight{
+   color: $primary-color;
+}
+.flavor{
+	color: #fff;
+}

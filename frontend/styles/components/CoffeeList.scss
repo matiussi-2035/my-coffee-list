@@ -1,0 +1,37 @@
+@import '../utils/colors';
+@import '../utils/mixins';
+@import '../utils/variables';
+
+
+.coffee-item{
+
+}
+.card-content{
+   padding: 2em;
+}
+.card-top{
+   @include flexContent(center, flex-start, row);
+   flex-wrap: wrap;
+}
+.coffee-picture{
+   height: 4em;
+   width: 4em;
+      img{
+         width: 100%;
+         border-radius: 4em;
+      }
+}
+
+.divider{
+   height: 1px;
+   background-color: $info-color;
+}
+.card-bottom{
+   @include flexContent(center, flex-start, row);
+   flex-wrap: wrap;
+   .flavor{
+		background-color: $primary-color;
+		padding: .5em;
+		border-radius: .5em;
+   }
+}

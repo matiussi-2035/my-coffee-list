@@ -1,36 +1,82 @@
-@import '../utils/colors';
-@import '../utils/mixins';
-@import '../utils/variables';
+@import "../utils/colors";
+@import "../utils/mixins";
+@import "../utils/variables";
 
-header{
-   background-color: $primary-color;
-   color: white;
-   @include flexContent(center, space-around, row);
-   height: 4em;
+header {
+	background-color: $primary-color;
+	color: white;
+	@include flexContent(center, space-between, row);
+	height: 4em;
+	grid-row: 1 / 2;
+	z-index: 3;
+	-webkit-box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
+	-moz-box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
+	box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
 }
-.navigation{
+.navigation {
+	span {
+		display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		background: #fff;
+		border-radius: 3px;
+		z-index: 1;
+		transition: all .2s ease-out;
+	}
 }
-.menu{
-   display: none;
-   position: absolute;
-   background-color: $primary-color;
-   width: 80%;
-   left: 0;
+.menu {
+	display: none;
+	position: absolute;
+	background-color: $primary-color;
+	width: 100%;
+	left: 0;
+	padding-top: 1em;
+	li{
+		width: 100%;
+	}
 }
-#button-menu{
-   display: none;
-   height: 2em;
-}
-#button-menu:checked ~ .menu{
-   display: block;
+.menu-item{
+	display: inline-block;
+	padding: 1em 1em 1em 1em;
+	width: 100%;
+	&:hover{
+		background-color: $secondary-color;
+	}
 }
 
-.menu-icon{
-   cursor: pointer;
-   display: inline-block;
-   padding: 1em .5em;
-  position: relative;
+#button-menu {
+	display: none;
+	height: 2em;
 }
-.menu{
+#button-menu:checked ~ .menu {
+	@include flexContent(center, center, column);
+	display:flex;
+	text-align: center;
+}
 
+#button-menu:checked ~ label > span:nth-child(1){
+	transform: rotate(-45deg) translate(-9px, 6px);
+	
+}
+#button-menu:checked ~ label > span:nth-child(2){
+	opacity: 0;
+}
+#button-menu:checked ~ label > span:nth-child(3){
+  	transform: rotate(45deg) translate(-6px, -4px);
+}
+
+.menu-icon {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	position: relative;
+	
+}
+
+.search-icon {
+	cursor: pointer;
+	padding: 1em 0.5em;
+	margin-right: 1em;
 }
