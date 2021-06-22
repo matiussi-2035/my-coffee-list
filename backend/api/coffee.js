@@ -1,7 +1,16 @@
 const coffee = require("../models/Coffee")
+const cors = require("cors")
 
 module.exports = app => {
 
+   app.use((req, res, next) =>{
+
+      //Definindo quais aplicações podem fazer requisições
+      res.header("Access-Control-Allow-Origin", "*")
+      res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE')
+      app.use(cors())
+      next()
+  })
 	//Inserting a new coffee
 	app.post('/add-coffee', (req, res) =>{
 
@@ -12,7 +21,7 @@ module.exports = app => {
 			{name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body}
 
 			).then(() =>{
-			res.send("Coffee successfully registred.")
+			   res.send("Coffee successfully registred.")
 		}).catch(error =>{
 			res.send("An error occured while trying to register your coffee. " + error)
 		})

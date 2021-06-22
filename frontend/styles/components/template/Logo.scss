@@ -1,0 +1,20 @@
+.main-logo{
+   width: min(200px, 40vw);
+   display: block;
+}
+.logo{
+	width: 100%;
+}
+.footer-logo{
+   width: min(150px, 30vw);
+   display: block;
+}
+
+//------------------- MEDIA QUERIES -------------------
+@media screen and (min-width: 900px) {
+	.main-logo{
+		margin-left: 3vw;
+		
+	}
+	
+}

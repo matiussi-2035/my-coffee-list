@@ -74,7 +74,9 @@ const Index = ({ coffees }) => {
 		<>
 			<Head pageTitle="My Coffee List | My Coffees"></Head>
 			<main className="container">
-				{/* <button><Link href="/recipes"><a>Add new coffee</a></Link></button> */}
+            <div className="button-list">
+				   <Link href="/coffees/add"><a className="button button-new">Add a new coffee</a></Link>
+            </div>
 				{renderCoffees()}
 			</main>
 		</>

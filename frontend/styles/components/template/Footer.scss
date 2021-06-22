@@ -1,0 +1,28 @@
+@import "../../utils/mixins";
+
+footer {
+	grid-row: 3 / 4;
+	background-color: $secondary-color;
+}
+.footer-wrapper {
+	@include flexContent(center, flex-start, row);
+	padding: 2em;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.nav-footer{
+	width: 50%;
+	flex-grow: 1;
+}
+.nav-footer-item {
+	margin-right: 1em;
+	
+}
+.social-footer{
+	display: inline-block;
+	
+	.social-icon{
+		margin-left: .2em;
+	}
+}
+

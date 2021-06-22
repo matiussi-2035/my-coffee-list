@@ -1,6 +1,6 @@
-@import "../utils/colors";
-@import "../utils/mixins";
-@import "../utils/variables";
+@import "../../utils/colors";
+@import "../../utils/mixins";
+@import "../../utils/variables";
 
 header {
 	background-color: $primary-color;
@@ -9,11 +9,12 @@ header {
 	height: 4em;
 	grid-row: 1 / 2;
 	z-index: 3;
-	-webkit-box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
-	-moz-box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
-	box-shadow: 3px 3px 13px 0px rgba(189,189,189,1);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
-.navigation {
+// ---------------- HAMBURGUER MENU MOBILE ------------------
+.side-navigation {
+	margin-left: 3vw;
 	span {
 		display: block;
 		width: 33px;
@@ -26,6 +27,7 @@ header {
 		transition: all .2s ease-out;
 	}
 }
+
 .menu {
 	display: none;
 	position: absolute;
@@ -66,17 +68,43 @@ header {
 #button-menu:checked ~ label > span:nth-child(3){
   	transform: rotate(45deg) translate(-6px, -4px);
 }
-
 .menu-icon {
 	cursor: pointer;
 	display: inline-block;
 	padding: 0.5em 0.5em 0.5em 0.5em;
 	position: relative;
-	
+}
+
+// ---------------- DESKTOP MENU ------------------
+.navigation{
+	display: none;
 }
 
 .search-icon {
 	cursor: pointer;
 	padding: 1em 0.5em;
-	margin-right: 1em;
+	margin-right: 3vw;
+}
+
+//------------------- MEDIA QUERIES -------------------
+@media screen and (min-width: 900px) {
+	header{
+		justify-content: space-around;
+		height: 4vw;
+	}
+	.side-navigation{
+		display: none;
+	}
+	.navigation{
+		display: inline-block;
+		width: 100%;
+		.menu-desktop{
+			@include flexContent(center, flex-end, row);
+			& > * {
+				margin-right: 3vw;
+			}
+		}
+		
+	}
+	
 }
