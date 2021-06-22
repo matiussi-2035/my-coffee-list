@@ -37,6 +37,10 @@ const Coffee = db.sequelize.define('coffee', {
         type: db.Sequelize.STRING,
         defaultValue: 'na'
     },
+    picture:{
+        type: db.Sequelize.STRING,
+        defaultValue: './public/imgs/default.jpg' 
+    }
 
 })
 //Creating the table coffee, run only one time

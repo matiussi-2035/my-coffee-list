@@ -55,10 +55,10 @@ module.exports = app => {
 	//Editing a coffee
 	app.put('/edit-coffee/:id', (req, res) =>{
 		const { id } = req.params
-		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
+		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body, picture} = req.body
 		
 		coffee.update(
-			{ name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body},
+			{ name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body, picture},
 			{
 				where: {
 					id: id
