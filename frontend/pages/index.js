@@ -1,11 +1,10 @@
 import axios from 'axios'
 import Link from 'next/link'
 import Head from '../components/template/Head'
-import ImgDev from '../public/imgs/coffees/img.png'
 
 export const getStaticProps = async () => {
 	const response = await axios.get(
-		'http://192.168.5.2:8080/coffees'
+		'http://192.168.5.7:8080/coffees'
 	)
 
 	return {
@@ -39,7 +38,7 @@ const Index = ({ coffees }) => {
 					<div className="card-content">
 						<div className="card-top">
 							<div className="coffee-picture">
-								<img src={ImgDev.src} />
+								<img src={"http://192.168.5.7:8080/" + coffee.picture} />
 							</div>
 							<div className="coffee-info">
 							<Link href={"/coffees/" + coffee.id} key={coffee.id}><a><h2>{coffee.name}</h2></a></Link>
@@ -72,10 +71,10 @@ const Index = ({ coffees }) => {
 	}
 	return (
 		<>
-			<Head pageTitle="My Coffee List | My Coffees"></Head>
+			<Head pageTitle="My Coffees"></Head>
 			<main className="container">
             <div className="button-list">
-				   <Link href="/coffees/add"><a className="button button-new">Add a new coffee</a></Link>
+				   <Link href="/coffees/add"><a className="button button-default">Add a new coffee</a></Link>
             </div>
 				{renderCoffees()}
 			</main>

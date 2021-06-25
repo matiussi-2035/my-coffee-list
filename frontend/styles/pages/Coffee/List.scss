@@ -1,15 +1,11 @@
-@import "../utils/colors";
-@import "../utils/mixins";
-@import "../utils/variables";
+@import "../../utils/colors";
+@import "../../utils/mixins";
+@import "../../utils/variables";
 
 .button-list {
 	width: 100%;
 	@include flexContent(center, center, row);
-	.button-new {
-		background-color: $primary-color;
-		margin-top: 2em;
-		margin-bottom: 1em;
-	}
+	
 }
 .coffee-item {
 }
@@ -23,7 +19,7 @@
 .coffee-picture {
 	img {
 		width: max(3.5em, 5vw);
-		border-radius: 10vw;
+		border-radius: 50%;
 		margin-right: 1em;
 	}
 }

@@ -39,11 +39,11 @@ const Coffee = db.sequelize.define('coffee', {
     },
     picture:{
         type: db.Sequelize.STRING,
-        defaultValue: './public/imgs/default.jpg' 
+        defaultValue: 'uploads/default.png' 
     }
 
 })
 //Creating the table coffee, run only one time
-// Coffee.sync({force: true})
+//  Coffee.sync({force: true})
 
 module.exports = Coffee
