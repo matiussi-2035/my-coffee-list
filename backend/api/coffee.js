@@ -33,10 +33,10 @@ module.exports = app => {
 	app.post('/add-coffee', upload.single("picture"), (req, res) => {
 		const picture = req.picture
 		
-		console.log(req.file, req.body)
+		// console.log(req.file, req.body)
 		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
 		if(req.file === undefined){
-			console.log('picture is undefined')
+			pictureName = "default/default.png"
 		}
 		console.log('picturename '+ pictureName)
 		coffee.create(
