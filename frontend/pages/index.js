@@ -34,7 +34,7 @@ const Index = ({ coffees }) => {
 				return coffee.herbal > 0 ? <span className="flavor herbal">Herbal: {coffee.herbal}</span> : ""
 			}
 			return (
-				<div key={coffee.id} className="card coffee-item">
+				<div key={coffee.id} className="card card-coffee-list">
 					<div className="card-content">
 						<div className="card-top">
 							<div className="coffee-picture">

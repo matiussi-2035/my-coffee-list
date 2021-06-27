@@ -5,6 +5,7 @@
 @import "./components/template/Header.scss";
 @import "./components/template/Logo.scss";
 @import "./pages/Coffee/List.scss";
+@import "./pages/Coffee/Add.scss";
 @import "./components/template/Footer.scss";
 
 html,
@@ -30,13 +31,15 @@ a {
 	margin: 0;
 	padding: 0;
 }
+label{
+	color: $info-color;
+}
+
 .card {
 	border-radius: 0.5em;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	margin: 5em 1% 1em 1%;
+	margin: 2em 1% 1em 1%;
 	background-color: #fff;
-	flex-shrink: 1;
-	width: 90%;
 }
 
 main {
@@ -59,66 +62,18 @@ main {
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
-.button-submit{
+.button-submit {
 	width: 100%;
-}
-
-//------------------- FORMS -------------------
-input[type="text"] {
-	background-color: $background-color;
-	width: 100%;
-	border-radius: 0.3em;
-	height: 2.5em;
-	border: 0.2em solid $input-border-color;
-	padding-left: 1em;
-}
-input[type="radio"] {
-	opacity: 0;
-	cursor: pointer;
-	width: 0;
-}
-.radio-wrapper {
-	@include flexContent(center, space-between, row);
-}
-.radio {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-}
-.radio input:checked ~ .checkmark{
-	border-color: $secondary-color;
-}
-.radio input:checked ~ .checkmark::after{
-	display: block;
-}
-.checkmark {
-	width: 1.25em;
-	height: 1.25em;
-	border: 0.2em solid $info-color;
-	border-radius: 50%;
-	padding: .1em;
-	margin-right: .5em;
-}
-.checkmark::after{
-	content: "";
-	width: 100%;
-	height: 100%;
-	display: none;
-	background: $secondary-color;
-	border-radius: 50%;
 }
 
 
 //------------------- MEDIA QUERIES -------------------
 @media screen and (min-width: 900px) {
-	.card {
-		width: 40%;
-		.card-content {
-			padding: 2vw;
-		}
-		.divider {
-			margin-top: 2vw;
-			margin-bottom: 2vw;
-		}
+	.card-content {
+		padding: 2vw;
+	}
+	.divider {
+		margin-top: 2vw;
+		margin-bottom: 2vw;
 	}
 }

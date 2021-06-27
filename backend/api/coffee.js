@@ -13,13 +13,14 @@ module.exports = app => {
 		next()
 	})
 
-	let pictureName = "default/default.png"
+	let pictureName = ""
 	const storage = multer.diskStorage({
 		destination: function(req, file, cb) {
 			cb(null, "uploads/")
 		},
 		filename: function(req, file, cb) {
 			pictureName = file.originalname + Date.now() + path.extname(file.originalname)
+			
 			cb(null, pictureName)
 		}
 	})
@@ -28,9 +29,11 @@ module.exports = app => {
 
 	//Inserting a new coffee
 	app.post('/add-coffee', upload.single("picture"), (req, res) => {
+		const picture = req.picture
+		
 		console.log(req.file, req.body)
 		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
-		
+		console.log('picturename '+ pictureName)
 		coffee.create(
 
 			{ name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body,
