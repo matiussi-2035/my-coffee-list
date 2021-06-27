@@ -19,9 +19,11 @@ module.exports = app => {
 			cb(null, "uploads/")
 		},
 		filename: function(req, file, cb) {
+
 			pictureName = file.originalname + Date.now() + path.extname(file.originalname)
 			
 			cb(null, pictureName)
+		
 		}
 	})
 	//Multer is a middleware to handle uploaded files
@@ -33,6 +35,9 @@ module.exports = app => {
 		
 		console.log(req.file, req.body)
 		const { name, roast, acidity, bitter, chocolate, floral, fruity, herbal, body} = req.body
+		if(req.file === undefined){
+			console.log('picture is undefined')
+		}
 		console.log('picturename '+ pictureName)
 		coffee.create(
 
