@@ -1,0 +1,15 @@
+.dropzone-container {
+	border: 0.1em solid $input-border-color;
+	border-radius: 0.3em;
+}
+.dropzone {
+	height: 5em;
+	margin: 1em;
+	background-color: $background-color;
+	border: 0.2em dotted $input-border-color;
+	border-radius: inherit;
+	@include flexContent(center, center, column);
+}
+.thumb-preview {
+	margin: 1em;
+}

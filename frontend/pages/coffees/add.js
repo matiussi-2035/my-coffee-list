@@ -85,33 +85,34 @@ const AddCoffee = () => {
 					<div className="card-content">
 						<h1>New Coffee</h1>
 						<form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
-							<p className="info">Coffee name</p>
-							<input
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-								name="name"
-								type="text"
-								minLength="3"
-								maxLength="254"
-								className="input-name"
-								placeholder="Enter your coffee name" />
-							
+							<div className="name-wrapper">
+								<p className="info">Coffee name</p>
+								<input
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+									name="name"
+									type="text"
+									minLength="3"
+									maxLength="254"
+									className="input-name"
+									placeholder="Enter your coffee name" />
+							</div>
 							<p className="info">Select the coffee roast</p>
 							<div className="radio-wrapper" onChange={(e) => setRoast(e.target.value)}>
 								<label className="radio" htmlFor="roast-light">
 									<input name="roast" type="radio" value="Light" id="roast-light" />
 									<div className="checkmark"></div>
-									Light
+									<p className="radio-label">Light</p>
 								</label>
 								<label className="radio" htmlFor="roast-medium">
 									<input name="roast" type="radio" value="Medium" id="roast-medium" defaultChecked/>
 									<div className="checkmark"></div>
-									Medium
+									<p className="radio-label">Medium</p>
 								</label>
 								<label className="radio" htmlFor="roast-dark">
 									<input name="roast" type="radio" value="Dark" id="roast-dark" />
 									<div className="checkmark"></div>
-									Dark
+									<p className="radio-label">Dark</p>
 								</label>
 							</div>
 							<p className="info">Select the coffee body</p>
@@ -119,17 +120,17 @@ const AddCoffee = () => {
 								<label className="radio" htmlFor="body-light">
 									<input name="body" type="radio" value="Light" id="body-light"/>
 									<div className="checkmark"></div>
-									Light
+									<p className="radio-label">Light</p>
 								</label>
 								<label className="radio" htmlFor="body-medium">
 									<input name="body" type="radio" value="Medium" id="body-medium" defaultChecked/>
 									<div className="checkmark"></div>
-									Medium
+									<p className="radio-label">Medium</p>
 								</label>
 								<label className="radio" htmlFor="body-heavy">
 									<input name="body" type="radio" value="Heavy" id="body-heavy"/>
 									<div className="checkmark"></div>
-									Heavy
+									<p className="radio-label">Heavy</p>
 								</label>
 							</div>
 							<p className="info">Select the coffee acidity level</p>

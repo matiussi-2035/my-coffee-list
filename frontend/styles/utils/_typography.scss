@@ -1,4 +1,11 @@
+a {
+	color: inherit;
+	text-decoration: none;
+}
 
+label p{
+	color: $info-color;
+}
 //------------------- MENU MOBILE -------------------
 .menu-item{
    font-size: clamp(15px, 5vw, 30em);
@@ -34,6 +41,13 @@
    font-weight: 700;
    font-size: clamp(1.2em, 1.5vw, 30em);
 }
+
+//------------------- RADIO -------------------
+.radio input:checked ~ .radio-label {
+	color: $bitterness-color;
+   font-weight: 700;
+}
+
 //------------------- FOOTER-------------------
 footer{
    color: #fff;

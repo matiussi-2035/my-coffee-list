@@ -1,0 +1,30 @@
+
+.slider {
+	
+	width: 100%;
+	height: 1em;
+	background-color: $background-color;
+	outline: none;
+	border-radius: .5em;
+}
+.slider::-webkit-slider-thumb {
+	appearance: none;
+	cursor: pointer;
+	background-color: $secondary-color;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+}
+
+.slider::-moz-range-thumb{
+	cursor: pointer;
+	background-color: $secondary-color;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+}
+.slider::-moz-range-progress{
+	background-color: $primary-color;
+	height: 100%;
+	border-radius: .5em;
+}

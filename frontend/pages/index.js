@@ -4,7 +4,7 @@ import Head from '../components/template/Head'
 
 export const getStaticProps = async () => {
 	const response = await axios.get(
-		'http://192.168.5.7:8080/coffees'
+		'http://localhost:8080/coffees'
 	)
 
 	return {
@@ -38,7 +38,7 @@ const Index = ({ coffees }) => {
 					<div className="card-content">
 						<div className="card-top">
 							<div className="coffee-picture">
-								<img src={"http://192.168.5.7:8080/" + coffee.picture} />
+								<img src={"http://localhost:8080/" + coffee.picture} />
 							</div>
 							<div className="coffee-info">
 							<Link href={"/coffees/" + coffee.id} key={coffee.id}><a><h2>{coffee.name}</h2></a></Link>
